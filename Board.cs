@@ -4,13 +4,13 @@ using System.Text;
 
 namespace TuroChamp
 {
-    class Board
+    class BoardPrinter
     {
         private const string _topRow = "    A     B     C     D    E      F    G      H";
         private const string _rankSep = " #################################################";
         private const string _borderWalls = " #     #     #     #     #     #     #     #     #";
 
-        public void printBoard()
+        static public void printBoard(Board board)
         {
             Console.WriteLine(_topRow);
 
@@ -65,6 +65,11 @@ namespace TuroChamp
             // bottom
             Console.WriteLine(_rankSep);
         }
+    }
 
+    class Board
+    {
+        List<Square> Squares { get; set; }
+        //List<>
     }
 }

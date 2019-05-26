@@ -2,8 +2,20 @@
 
 namespace TuroChamp
 {
+    class Game
+    {
+        public Board Board { get; set; }
+
+        public Game()
+        {
+            Board = new Board();
+        }
+    }
+
     class App
     {
+        // private Game game = null;
+
         public void Run()
         {
             Board board = new Board();
@@ -15,7 +27,7 @@ namespace TuroChamp
                 string command = Console.ReadLine();
                 if (command == "print")
                 {
-                    board.printBoard();
+                    BoardPrinter.printBoard(board);
                 }
                 else if (command.ToLower() == "quit")
                 {
@@ -29,11 +41,8 @@ namespace TuroChamp
     {
         static void Main(string[] args)
         {
-            Square bsqoard = new Square();
-
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Hi there again!");
-            bsqoard.doSomething();
+            Square bsqoard = new Square(SquareColor.White);
+            Console.WriteLine("TuroChamp!");
 
             App app = new App();
             app.Run();

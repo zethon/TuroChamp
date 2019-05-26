@@ -4,16 +4,37 @@ using System.Text;
 
 namespace TuroChamp
 {
+    class Move
+    {
+
+    }
+
+    public enum SquareColor
+    {
+        Black,
+        White
+    }
+
     public class Square
     {
-        public Square()
+        enum Rank
         {
-            Console.WriteLine("This is Square!");
+            One = 1,
+            Two, Three, Four, Five, Six, Seven, Eight
         }
 
-        public void doSomething()
+        enum File
         {
-            Console.WriteLine("Doing Square!");
+            A = 1,
+            B, C, D, E, F, G, H
+        }
+
+        public Piece CurrentPiece { get; set; }
+        public SquareColor Color { get; set; }
+
+        public Square(SquareColor color)
+        {
+            this.Color = color;
         }
     }
 }
