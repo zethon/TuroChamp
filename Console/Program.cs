@@ -1,8 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace TuroChamp
+using TuroChamp;
+
+namespace ConsoleApp
 {
     class BoardPrinter
     {
@@ -67,9 +71,50 @@ namespace TuroChamp
         }
     }
 
-    class Board
+    class Game
     {
-        List<Square> Squares { get; set; }
-        //List<>
+        public Board Board { get; set; }
+
+        public Game()
+        {
+            Board = new Board();
+        }
+    }
+
+    class App
+    {
+        // private Game game = null;
+
+        public void Run()
+        {
+            Board board = new Board();
+
+            bool done = false;
+            while (!done)
+            {
+                Console.Write(">");
+                string command = Console.ReadLine();
+                if (command == "print")
+                {
+                    BoardPrinter.printBoard(board);
+                }
+                else if (command.ToLower() == "quit")
+                {
+                    done = true;
+                }
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Square bsqoard = new Square(SquareColor.White);
+            Console.WriteLine("TuroChamp!");
+
+            App app = new App();
+            app.Run();
+        }
     }
 }

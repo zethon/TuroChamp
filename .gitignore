@@ -1,1 +1,10 @@
 .vs/
+Console/bin/
+Console/obj/
+Engine/bin/
+Engine/obj/
+packages/
+Tests/obj/Debug/Tests.pdb
+Tests/obj/Debug/Tests.csprojAssemblyReference.cache
+Tests/obj/
+Tests/bin/
