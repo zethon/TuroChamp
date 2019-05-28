@@ -8,5 +8,10 @@ namespace TuroChamp
     {
         List<Square> Squares { get; set; }
         //List<>
+
+        public Board()
+        {
+
+        }
     }
 }

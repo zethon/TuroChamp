@@ -4,6 +4,22 @@ using System.Text;
 
 namespace TuroChamp
 {
+    class Move
+    {
+        enum Direction
+        {
+            Vertical,
+            Horizontal,
+            Diagnoal
+        }
+    }
+
+    public enum PieceColor
+    {
+        Black,
+        White
+    }
+
     public enum PieceType
     {
         Pawn,
@@ -16,52 +32,62 @@ namespace TuroChamp
 
     public class Piece
     {
-        public PieceType pieceType { get; set; }
+        public PieceType PieceType { get; }
+        public PieceColor PieceColor { get; }
 
-        public Piece(PieceType pt)
+        public Piece(PieceColor color, PieceType pt)
         {
-            this.pieceType = pt;
+            this.PieceColor = color;
+            this.PieceType = pt;
         }
+
+        
     }
 
     class Pawn : Piece
     {
-        Pawn() : base(PieceType.Pawn)
+        Pawn(PieceColor color) 
+            : base(color, PieceType.Pawn)
         {
         }
     }
 
     class Rook : Piece
     {
-        Rook() : base(PieceType.Rook)
+        Rook(PieceColor color) 
+            : base(color, PieceType.Rook)
         {
         }
     }
 
     class Knight : Piece
     {
-        Knight() : base(PieceType.Knight)
+        Knight(PieceColor color) 
+            : base(color, PieceType.Knight)
         {
         }
     }
 
     class Bishop : Piece
     {
-        Bishop() : base(PieceType.Bishop)
+        Bishop(PieceColor color) 
+            : base(color, PieceType.Bishop)
         {
         }
     }
 
     class King : Piece
     {
-        King() : base(PieceType.King)
+        King(PieceColor color) 
+            : base(color, PieceType.King)
         {
         }
     }
 
     class Queen : Piece
     {
-        Queen() : base(PieceType.Queen)
+        Queen(PieceColor color) 
+            : base(color, PieceType.Queen)
         {
         }
     }

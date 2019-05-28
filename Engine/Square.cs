@@ -38,9 +38,9 @@ namespace TuroChamp
         {
             get
             {
-                int rankMod = ((int)this.Rank % 2) == 0 ? 1 : 0;
-                int squareMod = ((int)this.File + rankMod) % 2;
-                return (squareMod == 1) ? SquareColor.Black : SquareColor.White;
+                int fileMod = ((int)this.File % 2);
+                int squareMod = ((int)this.Rank + fileMod) % 2;
+                return (squareMod == 0) ? SquareColor.Black : SquareColor.White;
             }
         }
 
