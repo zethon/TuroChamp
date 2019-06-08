@@ -7,10 +7,10 @@ using TuroChamp;
 namespace Tests
 {
     [TestClass]
-    public class SqareTests
+    public class SquareTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void SquareColorTest()
         {
             var data = new List<Tuple<File, Rank, SquareColor>>
             {
@@ -92,6 +92,40 @@ namespace Tests
                 Square square = new Square(v.Item1, v.Item2);
                 Assert.AreEqual(square.Color, v.Item3);
             }
+        }
+
+        [TestMethod]
+        public void PositionAdditionTest()
+        {
+            var data = new List<Tuple<Position, Move, Position>>
+            {
+                Tuple.Create
+                (
+                    new Position(File.A, Rank.One),
+                    new Move
+                    {
+                        Segments =
+                        {
+                            new Move.Segment{ Direction = Move.Direction.Vertical, Degree = 1}
+                        }
+                    },
+                    new Position(File.A, Rank.Two)
+                )
+            };
+
+            foreach (var v in data)
+            {
+                Square square = new Square(v.Item1, v.Item2);
+                Assert.AreEqual(square.Color, v.Item3);
+            }
+
+            Position position = new Position(File.A, Rank.One);
+
+            Move move = new Move();
+            move.Segments.Add(new Move.Segment{ Direction = Move.Direction.Vertical, Degree = 1});
+
+            Position newposition = position + move;
+            Assert.AreEqual(new Position(File.A, Rank.Two), newposition);
         }
     }
 }

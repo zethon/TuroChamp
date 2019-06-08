@@ -4,16 +4,6 @@ using System.Text;
 
 namespace TuroChamp
 {
-    class Move
-    {
-        enum Direction
-        {
-            Vertical,
-            Horizontal,
-            Diagnoal
-        }
-    }
-
     public enum PieceColor
     {
         Black,
@@ -39,9 +29,7 @@ namespace TuroChamp
         {
             this.PieceColor = color;
             this.PieceType = pt;
-        }
-
-        
+        }   
     }
 
     class Pawn : Piece
