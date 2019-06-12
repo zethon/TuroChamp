@@ -14,10 +14,10 @@ namespace Tests
             Board board = new Board();
 
             Square square = board.Squares[0];
-            Assert.AreEqual(SquareColor.Black, square.Color);
+            Assert.AreEqual(Color.Black, square.Color);
             Assert.AreEqual(Rank.One, square.Rank);
             Assert.AreEqual(File.A, square.File);
-            Assert.IsNull(square.CurrentPiece);
+            Assert.IsNotNull(square.Piece);
         }
     }
 }

@@ -110,7 +110,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            //Square bsqoard = new Square(SquareColor.White);
+            //Square bsqoard = new Square(Color.White);
             Console.WriteLine("TuroChamp!");
 
             App app = new App();

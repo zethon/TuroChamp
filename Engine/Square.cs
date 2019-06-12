@@ -19,7 +19,7 @@ namespace TuroChamp
         { }
     }
 
-    public enum SquareColor
+    public enum Color
     {
         Black,
         White
@@ -42,8 +42,7 @@ namespace TuroChamp
         public enum Direction
         {
             Vertical,
-            Horizontal,
-            Diagnoal
+            Horizontal
         }
 
         public struct Segment
@@ -72,6 +71,8 @@ namespace TuroChamp
             Rank = rank;
             File = file;
         }
+
+        public Position() { }
 
         public override bool Equals(object obj)
         {
@@ -106,7 +107,7 @@ namespace TuroChamp
                     case Move.Direction.Vertical:
                     {
                         Int32 rankNumber = (Int32)newposition.Rank + segment.Degree;
-                        if (rankNumber < 0 || rankNumber > 8)
+                        if (rankNumber < 1 || rankNumber > 8)
                         {
                             throw new InvalidSquareException("Invalid square");
                         }
@@ -117,17 +118,11 @@ namespace TuroChamp
                     case Move.Direction.Horizontal:
                     {
                         Int32 fileNumber = (Int32)newposition.File + segment.Degree;
-                        if (fileNumber < 0 || fileNumber > 8)
+                        if (fileNumber < 1 || fileNumber > 8)
                         {
                             throw new InvalidSquareException("Invalid square");
                         }
                         newposition.File = (File)fileNumber;
-                    }
-                    break;
-
-                    case Move.Direction.Diagnoal:
-                    {
-
                     }
                     break;  
                 }
@@ -139,30 +134,30 @@ namespace TuroChamp
 
     public class Square
     {
-        public File File { get; set; }
-        public Rank Rank { get; set; }
+        public File File { get => Position.File; }
+        public Rank Rank { get => Position.Rank; }
 
-        public Piece CurrentPiece { get; set; }
-        public SquareColor Color
+        public Position Position { get; set; }
+
+        public Piece Piece { get; set; }
+
+        public Color Color
         {
             get
             {
                 int fileMod = ((int)this.File % 2);
                 int squareMod = ((int)this.Rank + fileMod) % 2;
-                return (squareMod == 0) ? SquareColor.Black : SquareColor.White;
+                return (squareMod == 0) ? Color.Black : Color.White;
             }
         }
 
         public Square(Rank rank, File file)
-        {
-            this.Rank = rank;
-            this.File = file;
-        }
+            => Position = new Position { Rank = rank, File = file };
 
         public Square(File file, Rank rank)
-        {
-            this.Rank = rank;
-            this.File = file;
-        }
+            => Position = new Position { Rank = rank, File = file };
+    
+        public Square(Position position) 
+            => Position = position;
     }
 }

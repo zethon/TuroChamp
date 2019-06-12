@@ -6,85 +6,85 @@ using TuroChamp;
 
 namespace Tests
 {
-    [TestClass]
+    [TestClass, TestCategory("Data")]
     public class SquareTests
     {
         [TestMethod]
         public void SquareColorTest()
         {
-            var data = new List<Tuple<File, Rank, SquareColor>>
+            var data = new List<Tuple<File, Rank, Color>>
             {
-                Tuple.Create(File.A, Rank.One, SquareColor.Black),
-                Tuple.Create(File.A, Rank.Two, SquareColor.White),
-                Tuple.Create(File.A, Rank.Three, SquareColor.Black),
-                Tuple.Create(File.A, Rank.Four, SquareColor.White),
-                Tuple.Create(File.A, Rank.Five, SquareColor.Black),
-                Tuple.Create(File.A, Rank.Six, SquareColor.White),
-                Tuple.Create(File.A, Rank.Seven, SquareColor.Black),
-                Tuple.Create(File.A, Rank.Eight, SquareColor.White),
+                Tuple.Create(File.A, Rank.One, Color.Black),
+                Tuple.Create(File.A, Rank.Two, Color.White),
+                Tuple.Create(File.A, Rank.Three, Color.Black),
+                Tuple.Create(File.A, Rank.Four, Color.White),
+                Tuple.Create(File.A, Rank.Five, Color.Black),
+                Tuple.Create(File.A, Rank.Six, Color.White),
+                Tuple.Create(File.A, Rank.Seven, Color.Black),
+                Tuple.Create(File.A, Rank.Eight, Color.White),
                 
-                Tuple.Create(File.B, Rank.One, SquareColor.White),
-                Tuple.Create(File.B, Rank.Two, SquareColor.Black),
-                Tuple.Create(File.B, Rank.Three, SquareColor.White),
-                Tuple.Create(File.B, Rank.Four, SquareColor.Black),
-                Tuple.Create(File.B, Rank.Five, SquareColor.White),
-                Tuple.Create(File.B, Rank.Six, SquareColor.Black),
-                Tuple.Create(File.B, Rank.Seven, SquareColor.White),
-                Tuple.Create(File.B, Rank.Eight, SquareColor.Black),
+                Tuple.Create(File.B, Rank.One, Color.White),
+                Tuple.Create(File.B, Rank.Two, Color.Black),
+                Tuple.Create(File.B, Rank.Three, Color.White),
+                Tuple.Create(File.B, Rank.Four, Color.Black),
+                Tuple.Create(File.B, Rank.Five, Color.White),
+                Tuple.Create(File.B, Rank.Six, Color.Black),
+                Tuple.Create(File.B, Rank.Seven, Color.White),
+                Tuple.Create(File.B, Rank.Eight, Color.Black),
                 
-                Tuple.Create(File.C, Rank.One, SquareColor.Black),
-                Tuple.Create(File.C, Rank.Two, SquareColor.White),
-                Tuple.Create(File.C, Rank.Three, SquareColor.Black),
-                Tuple.Create(File.C, Rank.Four, SquareColor.White),
-                Tuple.Create(File.C, Rank.Five, SquareColor.Black),
-                Tuple.Create(File.C, Rank.Six, SquareColor.White),
-                Tuple.Create(File.C, Rank.Seven, SquareColor.Black),
-                Tuple.Create(File.C, Rank.Eight, SquareColor.White),
+                Tuple.Create(File.C, Rank.One, Color.Black),
+                Tuple.Create(File.C, Rank.Two, Color.White),
+                Tuple.Create(File.C, Rank.Three, Color.Black),
+                Tuple.Create(File.C, Rank.Four, Color.White),
+                Tuple.Create(File.C, Rank.Five, Color.Black),
+                Tuple.Create(File.C, Rank.Six, Color.White),
+                Tuple.Create(File.C, Rank.Seven, Color.Black),
+                Tuple.Create(File.C, Rank.Eight, Color.White),
                 
-                Tuple.Create(File.D, Rank.One, SquareColor.White),
-                Tuple.Create(File.D, Rank.Two, SquareColor.Black),
-                Tuple.Create(File.D, Rank.Three, SquareColor.White),
-                Tuple.Create(File.D, Rank.Four, SquareColor.Black),
-                Tuple.Create(File.D, Rank.Five, SquareColor.White),
-                Tuple.Create(File.D, Rank.Six, SquareColor.Black),
-                Tuple.Create(File.D, Rank.Seven, SquareColor.White),
-                Tuple.Create(File.D, Rank.Eight, SquareColor.Black),
+                Tuple.Create(File.D, Rank.One, Color.White),
+                Tuple.Create(File.D, Rank.Two, Color.Black),
+                Tuple.Create(File.D, Rank.Three, Color.White),
+                Tuple.Create(File.D, Rank.Four, Color.Black),
+                Tuple.Create(File.D, Rank.Five, Color.White),
+                Tuple.Create(File.D, Rank.Six, Color.Black),
+                Tuple.Create(File.D, Rank.Seven, Color.White),
+                Tuple.Create(File.D, Rank.Eight, Color.Black),
                 
-                Tuple.Create(File.E, Rank.One, SquareColor.Black),
-                Tuple.Create(File.E, Rank.Two, SquareColor.White),
-                Tuple.Create(File.E, Rank.Three, SquareColor.Black),
-                Tuple.Create(File.E, Rank.Four, SquareColor.White),
-                Tuple.Create(File.E, Rank.Five, SquareColor.Black),
-                Tuple.Create(File.E, Rank.Six, SquareColor.White),
-                Tuple.Create(File.E, Rank.Seven, SquareColor.Black),
-                Tuple.Create(File.E, Rank.Eight, SquareColor.White),
+                Tuple.Create(File.E, Rank.One, Color.Black),
+                Tuple.Create(File.E, Rank.Two, Color.White),
+                Tuple.Create(File.E, Rank.Three, Color.Black),
+                Tuple.Create(File.E, Rank.Four, Color.White),
+                Tuple.Create(File.E, Rank.Five, Color.Black),
+                Tuple.Create(File.E, Rank.Six, Color.White),
+                Tuple.Create(File.E, Rank.Seven, Color.Black),
+                Tuple.Create(File.E, Rank.Eight, Color.White),
                 
-                Tuple.Create(File.F, Rank.One, SquareColor.White),
-                Tuple.Create(File.F, Rank.Two, SquareColor.Black),
-                Tuple.Create(File.F, Rank.Three, SquareColor.White),
-                Tuple.Create(File.F, Rank.Four, SquareColor.Black),
-                Tuple.Create(File.F, Rank.Five, SquareColor.White),
-                Tuple.Create(File.F, Rank.Six, SquareColor.Black),
-                Tuple.Create(File.F, Rank.Seven, SquareColor.White),
-                Tuple.Create(File.F, Rank.Eight, SquareColor.Black),
+                Tuple.Create(File.F, Rank.One, Color.White),
+                Tuple.Create(File.F, Rank.Two, Color.Black),
+                Tuple.Create(File.F, Rank.Three, Color.White),
+                Tuple.Create(File.F, Rank.Four, Color.Black),
+                Tuple.Create(File.F, Rank.Five, Color.White),
+                Tuple.Create(File.F, Rank.Six, Color.Black),
+                Tuple.Create(File.F, Rank.Seven, Color.White),
+                Tuple.Create(File.F, Rank.Eight, Color.Black),
                 
-                Tuple.Create(File.G, Rank.One, SquareColor.Black),
-                Tuple.Create(File.G, Rank.Two, SquareColor.White),
-                Tuple.Create(File.G, Rank.Three, SquareColor.Black),
-                Tuple.Create(File.G, Rank.Four, SquareColor.White),
-                Tuple.Create(File.G, Rank.Five, SquareColor.Black),
-                Tuple.Create(File.G, Rank.Six, SquareColor.White),
-                Tuple.Create(File.G, Rank.Seven, SquareColor.Black),
-                Tuple.Create(File.G, Rank.Eight, SquareColor.White),
+                Tuple.Create(File.G, Rank.One, Color.Black),
+                Tuple.Create(File.G, Rank.Two, Color.White),
+                Tuple.Create(File.G, Rank.Three, Color.Black),
+                Tuple.Create(File.G, Rank.Four, Color.White),
+                Tuple.Create(File.G, Rank.Five, Color.Black),
+                Tuple.Create(File.G, Rank.Six, Color.White),
+                Tuple.Create(File.G, Rank.Seven, Color.Black),
+                Tuple.Create(File.G, Rank.Eight, Color.White),
                 
-                Tuple.Create(File.H, Rank.One, SquareColor.White),
-                Tuple.Create(File.H, Rank.Two, SquareColor.Black),
-                Tuple.Create(File.H, Rank.Three, SquareColor.White),
-                Tuple.Create(File.H, Rank.Four, SquareColor.Black),
-                Tuple.Create(File.H, Rank.Five, SquareColor.White),
-                Tuple.Create(File.H, Rank.Six, SquareColor.Black),
-                Tuple.Create(File.H, Rank.Seven, SquareColor.White),
-                Tuple.Create(File.H, Rank.Eight, SquareColor.Black),
+                Tuple.Create(File.H, Rank.One, Color.White),
+                Tuple.Create(File.H, Rank.Two, Color.Black),
+                Tuple.Create(File.H, Rank.Three, Color.White),
+                Tuple.Create(File.H, Rank.Four, Color.Black),
+                Tuple.Create(File.H, Rank.Five, Color.White),
+                Tuple.Create(File.H, Rank.Six, Color.Black),
+                Tuple.Create(File.H, Rank.Seven, Color.White),
+                Tuple.Create(File.H, Rank.Eight, Color.Black),
             };
 
             foreach (var v in data)
@@ -95,7 +95,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void PositionAdditionTest()
+        public void PositionAdditionTestGood()
         {
             var data = new List<Tuple<Position, Move, Position>>
             {
@@ -110,22 +110,105 @@ namespace Tests
                         }
                     },
                     new Position(File.A, Rank.Two)
+                ),
+
+                Tuple.Create
+                (
+                    new Position(File.A, Rank.One),
+                    new Move
+                    {
+                        Segments =
+                        {
+                            new Move.Segment{ Direction = Move.Direction.Vertical, Degree = 7}
+                        }
+                    },
+                    new Position(File.A, Rank.Eight)
+                ),
+
+                Tuple.Create
+                (
+                    new Position(File.A, Rank.One),
+                    new Move
+                    {
+                        Segments =
+                        {
+                            new Move.Segment{ Direction = Move.Direction.Vertical, Degree = 7},
+                            new Move.Segment{ Direction = Move.Direction.Horizontal, Degree = 7}
+                        }
+                    },
+                    new Position(File.H, Rank.Eight)
+                ),
+
+                Tuple.Create
+                (
+                    new Position(File.A, Rank.One),
+                    new Move
+                    {
+                        Segments =
+                        {
+                            new Move.Segment{ Direction = Move.Direction.Vertical, Degree = 7},
+                            new Move.Segment{ Direction = Move.Direction.Horizontal, Degree = 7},
+                            new Move.Segment{ Direction = Move.Direction.Vertical, Degree = -7},
+                        }
+                    },
+                    new Position(File.H, Rank.One)
+                ),
+
+                Tuple.Create
+                (
+                    new Position(File.A, Rank.One),
+                    new Move
+                    {
+                        Segments =
+                        {
+                            new Move.Segment{ Direction = Move.Direction.Vertical, Degree = 7},
+                            new Move.Segment{ Direction = Move.Direction.Horizontal, Degree = 7},
+                            new Move.Segment{ Direction = Move.Direction.Vertical, Degree = -7},
+                            new Move.Segment{ Direction = Move.Direction.Horizontal, Degree = -7},
+                        }
+                    },
+                    new Position(File.A, Rank.One)
                 )
             };
 
             foreach (var v in data)
             {
-                Square square = new Square(v.Item1, v.Item2);
-                Assert.AreEqual(square.Color, v.Item3);
+                Position newposition = v.Item1 + v.Item2;
+                Assert.AreEqual(v.Item3, newposition);
             }
+        }
 
-            Position position = new Position(File.A, Rank.One);
+        [TestMethod]
+        public void PositionAdditionTestBad()
+        {
+            var data = new List<Tuple<Position, Move, Position>>
+            {
+                Tuple.Create
+                (
+                    new Position(File.A, Rank.One),
+                    new Move
+                    {
+                        Segments =
+                        {
+                            new Move.Segment{ Direction = Move.Direction.Vertical, Degree = -1}
+                        }
+                    },
+                    new Position(File.A, Rank.Two)
+                )
+            };
 
-            Move move = new Move();
-            move.Segments.Add(new Move.Segment{ Direction = Move.Direction.Vertical, Degree = 1});
+            foreach (var v in data)
+            {
+                Assert.ThrowsException<InvalidSquareException>(()=>(v.Item1 + v.Item2));
+            }
+        }
 
-            Position newposition = position + move;
-            Assert.AreEqual(new Position(File.A, Rank.Two), newposition);
+        [TestMethod]
+        public void BasicPieceTest()
+        {
+            Board board = new Board();
+            Assert.AreEqual(typeof(Pawn), board.Squares[8].Piece.GetType());
+            Assert.AreEqual(Color.White, board.Squares[8].Piece.Color);
         }
     }
 }
