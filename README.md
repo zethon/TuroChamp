@@ -6,7 +6,7 @@ Released under the BSD license, see 'license.txt' for details.
 
 ## Introduction 
 
-This is a C# implementation of the _Turochamp_ chess engine. This project aims to be compatible with [The Chess Engine Communication Protocol](http://home.hccnet.nl/h.g.muller/engine-intf.html) and therefore useable with GUI implemenations such as Xboard/WinBoard.
+This is a C# implementation of the _Turochamp_ chess engine. This project aims to be compatible with [The Chess Engine Communication Protocol](http://home.hccnet.nl/h.g.muller/engine-intf.html) and therefore useable with GUI implemenations such as [Xboard/WinBoard](https://www.gnu.org/software/xboard/).
 
 ## What is Turochamp?
 
