@@ -19,6 +19,7 @@ namespace TuroChamp
         public PieceType PieceType { get; }
         public Color Color { get; }
         public bool Moved { get; set; } = false;
+        public bool Captured { get; set; } = false;
 
         public Piece(Color color, PieceType pt)
         {
@@ -61,9 +62,14 @@ namespace TuroChamp
 
     public class King : Piece
     {
-        public King(Color color) 
-            : base(color, PieceType.King)
+        public Rook QueensideRook { get; }
+        public Rook KingsideRook { get; }
+
+        public King(Rook r1, Rook r2) 
+            : base(r1.Color, PieceType.King)
         {
+            QueensideRook = r1;
+            KingsideRook = r2;
         }
     }
 

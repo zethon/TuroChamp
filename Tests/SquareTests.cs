@@ -210,5 +210,15 @@ namespace Tests
             Assert.AreEqual(typeof(Pawn), board.Squares[8].Piece.GetType());
             Assert.AreEqual(Color.White, board.Squares[8].Piece.Color);
         }
+
+        [TestMethod]
+        public void KingTest()
+        {
+            Board board = new Board();
+            King whiteKing = (King)board.Squares[4].Piece;
+            Rook qRook = whiteKing.QueensideRook;
+            qRook.Captured = true;
+            Assert.AreEqual(true, board.Squares[0].Piece.Captured);
+        }
     }
 }
