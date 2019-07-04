@@ -18,8 +18,19 @@ namespace ConsoleApp
         private const string _rankSep = " #################################################";
         private const string _borderWalls = " #     #     #     #     #     #     #     #     #";
 
+        private void printColumnLabels(bool inverted = false)
+        {
+            var range = Enumerable.Range(8, -1);
+            foreach (var item in range)
+            {
+                Console.WriteLine(string.Format("{0}:", item));
+            }
+        }
+
         public void printBoard(Board board)
         {
+            printColumnLabels();
+
             foreach (var rank in _rank)
             {
                 Console.Write(string.Format("{0}:", rank));
