@@ -11,3 +11,5 @@ Tests/bin/
 /TuroChampXboard/bin/Debug
 /TuroChampXboard/obj/Debug
 ConsoleApp.csproj.user
+/Xboard/bin/Debug
+/Xboard/obj/Debug

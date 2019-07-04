@@ -21,7 +21,7 @@ The source code currently has the following the subprojects:
 * `Console` - A console application that allows users to play against the engine in a terminal window.
 * `Engine` - The Chess engine itself. 
 * `Tests` - Unit tests for the engine
-* `TuroChampXboard` - An Xboard interface for the engine
+* `Xboard` - An Xboard interface for the engine
 
 Development is being on on Windows 10 (using Visual Studio 19) and macOS (using Visual Studio for Mac 8.1). The unit tests, however, only run on Windows.
 
