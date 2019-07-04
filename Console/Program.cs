@@ -83,24 +83,63 @@ namespace ConsoleApp
 
     class App
     {
-        // private Game game = null;
+        Game CurrentGame = null;
+
+        private void doPrint(List<string> args)
+        {
+            if (args.Count == 0)
+            {
+                BoardPrinter.printBoard(CurrentGame.Board);
+            }
+            else
+            {
+                switch (args[0].ToLower())
+                {
+                    default:
+                    break;
+
+                    case "king":
+                    {
+                        Console.WriteLine("\u2649");
+                    }
+                    break;
+                }
+            }
+        }
 
         public void Run()
         {
-            Board board = new Board();
+            CurrentGame = new Game();
 
             bool done = false;
             while (!done)
             {
                 Console.Write(">");
-                string command = Console.ReadLine();
-                if (command == "print")
+                string command = Console.ReadLine().Trim();
+
+                string[] args = command.Split(' ');
+                if (args.Length == 0) continue;
+
+                List<string> argList = args.ToList<string>();
+                argList.RemoveAt(0);
+
+                switch (args[0])
                 {
-                    BoardPrinter.printBoard(board);
-                }
-                else if (command.ToLower() == "quit")
-                {
-                    done = true;
+                    default:
+                    break;
+
+                    case "print":
+                    {
+                        doPrint(argList);
+                    }
+                    break;
+
+                    case "exit":
+                    case "quit":
+                    {
+                        done = true;
+                    }
+                    break;
                 }
             }
         }

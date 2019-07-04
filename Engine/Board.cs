@@ -11,14 +11,19 @@ namespace TuroChamp
 
         public Board()
         {
+            this.Reset();
+        }
+
+        public void Reset()
+        {
             Squares = new List<Square>();
 
-            foreach(Rank rank in Enum.GetValues(typeof(Rank)))
+            foreach (Rank rank in Enum.GetValues(typeof(Rank)))
             {
-                foreach(File file in Enum.GetValues(typeof(File)))
+                foreach (File file in Enum.GetValues(typeof(File)))
                 {
                     Squares.Add(new Square(rank, file));
-               }
+                }
             }
 
             Squares[0].Piece = new Rook(Color.White);
@@ -37,7 +42,7 @@ namespace TuroChamp
                 Squares[index].Piece = new Pawn(Color.White);
             }
 
-            foreach (int index in Enumerable.Range(48,8))
+            foreach (int index in Enumerable.Range(48, 8))
             {
                 Squares[index].Piece = new Pawn(Color.Black);
             }
