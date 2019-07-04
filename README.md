@@ -14,6 +14,17 @@ _Turochamp_ is considered the first chess engine. It was never fully implemented
 
 The engine works by calculating every potential move and assigning a point value to each possible state of the board, and then executing the move with the greatest points. The engine is capable of solving certain puzzles, such as _Mate in Two_.
 
+## Development
+
+The source code currently has the following the subprojects:
+
+* `Console` - A console application that allows users to play against the engine in a terminal window.
+* `Engine` - The Chess engine itself. 
+* `Tests` - Unit tests for the engine
+* `TuroChampXboard` - An Xboard interface for the engine
+
+Development is being on on Windows 10 (using Visual Studio 19) and macOS (using Visual Studio for Mac 8.1). The unit tests, however, only run on Windows.
+
 ## Point Value System
 
 *TBD*<br/>

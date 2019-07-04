@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Linq.Enumerable;
 
 using TuroChamp;
 
@@ -10,64 +11,80 @@ namespace ConsoleApp
 {
     class BoardPrinter
     {
+        string[] _columns = { "A", "B", "C", "D", "E", "F", "G", "H" };
+        string[] _rank = { "1", "2", "3", "4", "5", "6", "7", "8" };
+
         private const string _topRow = "    A     B     C     D    E      F    G      H";
         private const string _rankSep = " #################################################";
         private const string _borderWalls = " #     #     #     #     #     #     #     #     #";
 
-        static public void printBoard(Board board)
+        public void printBoard(Board board)
         {
-            Console.WriteLine(_topRow);
+            foreach (var rank in _rank)
+            {
+                Console.Write(string.Format("{0}:", rank));
 
-            // 1 rank
-            Console.WriteLine(_rankSep);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(" #  R  #  N  #  B  #  K  #  Q  #  B  #  N  #  R  #");
-            Console.WriteLine(_borderWalls);
+                foreach (var column in _columns)
+                {
+                    Console.Write("{0} ", column);
+                }
 
-            // 2 rank
-            Console.WriteLine(_rankSep);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(" #  P  #  P  #  P  #  P  #  P  #  P  #  P  #  P  #");
-            Console.WriteLine(_borderWalls);
+                Console.WriteLine();
+            }
+            //Console.BackgroundColor = ConsoleColor.Gray;
 
-            // 3 rank
-            Console.WriteLine(_rankSep);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_topRow);
 
-            // 4 rank
-            Console.WriteLine(_rankSep);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(_borderWalls);
+            //// 8 rank
+            //Console.WriteLine(_rankSep);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(" #  R  #  N  #  B  #  K  #  Q  #  B  #  N  #  R  #");
+            //Console.WriteLine(_borderWalls);
 
-            // 5 rank
-            Console.WriteLine(_rankSep);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(_borderWalls);
+            //// 7 rank
+            //Console.WriteLine(_rankSep);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(" #  P  #  P  #  P  #  P  #  P  #  P  #  P  #  P  #");
+            //Console.WriteLine(_borderWalls);
 
-            // 6 rank
-            Console.WriteLine(_rankSep);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(_borderWalls);
+            //// 6 rank
+            //Console.WriteLine(_rankSep);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_borderWalls);
 
-            // 7 rank
-            Console.WriteLine(_rankSep);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(" #  P  #  P  #  P  #  P  #  P  #  P  #  P  #  P  #");
-            Console.WriteLine(_borderWalls);
+            //// 5 rank
+            //Console.WriteLine(_rankSep);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_borderWalls);
 
-            // 8 rank
-            Console.WriteLine(_rankSep);
-            Console.WriteLine(_borderWalls);
-            Console.WriteLine(" #  R  #  N  #  B  #  K  #  Q  #  B  #  N  #  R  #");
-            Console.WriteLine(_borderWalls);
+            //// 4 rank
+            //Console.WriteLine(_rankSep);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_borderWalls);
 
-            // bottom
-            Console.WriteLine(_rankSep);
+            //// 3 rank
+            //Console.WriteLine(_rankSep);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(_borderWalls);
+
+            //// 2 rank
+            //Console.WriteLine(_rankSep);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(" #  P  #  P  #  P  #  P  #  P  #  P  #  P  #  P  #");
+            //Console.WriteLine(_borderWalls);
+
+            //// 1 rank
+            //Console.WriteLine(_rankSep);
+            //Console.WriteLine(_borderWalls);
+            //Console.WriteLine(" #  R  #  N  #  B  #  K  #  Q  #  B  #  N  #  R  #");
+            //Console.WriteLine(_borderWalls);
+
+            //// bottom
+            //Console.WriteLine(_rankSep);
         }
     }
 
@@ -84,12 +101,13 @@ namespace ConsoleApp
     class App
     {
         Game CurrentGame = null;
+        BoardPrinter _printer = new BoardPrinter();
 
         private void doPrint(List<string> args)
         {
             if (args.Count == 0)
             {
-                BoardPrinter.printBoard(CurrentGame.Board);
+                _printer.printBoard(CurrentGame.Board);
             }
             else
             {
